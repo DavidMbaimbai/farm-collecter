@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @OpenAPIDefinition(
 		info = @Info(
 				title = "Farmer Apis",
-				description = "API for Creating, getting, updating and deleting crops from FarmTracker",
+				description = "API for Creating, getting, updating and deleting farmer activities  from FarmTracker",
 				version = "v1",
 				summary = "Creating, getting, updating and deleting Apis",
 				contact = @Contact(
