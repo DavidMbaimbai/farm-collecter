@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @OpenAPIDefinition(
 		info = @Info(
-				title = "Crop Api",
+				title = "Farmer Apis",
 				description = "API for Creating, getting, updating and deleting crops from FarmTracker",
 				version = "v1",
 				summary = "Creating, getting, updating and deleting Apis",
