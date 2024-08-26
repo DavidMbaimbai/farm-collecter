@@ -45,6 +45,15 @@ public class FarmActivityTrackerController {
     }
 
     @GetMapping("/season/{seasonName}/farm/{farmName}")
+    @Operation(summary = "Fetching farm activities details ", description = "Getting farm activities details ")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "farm activities details retrieved successfully",
+                    content = @Content(schema = @Schema(implementation = ResponseDto.class))),
+            @ApiResponse(responseCode = "404", description = "farm activities details not found!",
+                    content = @Content(schema = @Schema(implementation = ErrorResponseDto.class))),
+            @ApiResponse(responseCode = "500", description = "Unknown exception occurred during processing",
+                    content = @Content(schema = @Schema(implementation = ErrorResponseDto.class)))
+    })
     public ResponseEntity<List<FarmActivityTrackerDto>> findBySeasonAndFarm(@PathVariable final String seasonName,
                                                                            @PathVariable final String farmName) {
         List<FarmActivityTrackerDto> farmActivityTrackerDtos =
@@ -53,6 +62,15 @@ public class FarmActivityTrackerController {
     }
 
     @GetMapping("/crop/{cropName}")
+    @Operation(summary = "Fetching farm activities details by crop name", description = "Getting farm activities details using the crop name")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "farm activities details retrieved successfully",
+                    content = @Content(schema = @Schema(implementation = ResponseDto.class))),
+            @ApiResponse(responseCode = "404", description = "farm activities details not found!",
+                    content = @Content(schema = @Schema(implementation = ErrorResponseDto.class))),
+            @ApiResponse(responseCode = "500", description = "Unknown exception occurred during processing",
+                    content = @Content(schema = @Schema(implementation = ErrorResponseDto.class)))
+    })
     public ResponseEntity<List<FarmActivityTrackerDto>> findByCropName(@PathVariable final String cropName) {
         List<FarmActivityTrackerDto> farmActivityTrackerDtos =
                 farmActivityTrackerService.findByCropName(cropName);
